@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:for_video/service.dart';
+import 'package:hive/hive.dart';
 import 'package:video_player/video_player.dart';
 import 'dart:io';
 
@@ -8,6 +9,7 @@ void main() => runApp(const VideoApp());
 /// Stateful widget to fetch and then display video content.
 class VideoApp extends StatefulWidget {
   const VideoApp({Key? key}) : super(key: key);
+  
 
   @override
   _VideoAppState createState() => _VideoAppState();
@@ -15,12 +17,12 @@ class VideoApp extends StatefulWidget {
 
 class _VideoAppState extends State<VideoApp> {
   late VideoPlayerController _controller;
+  Box box = Hive.box('saveVideo');
 
   @override
   void initState() {
     super.initState();
-    print("HOME PRINT ${Service.subName}");
-    _controller = VideoPlayerController.file(File(Service.savePath!))
+    _controller = VideoPlayerController.file(File(box.getAt(0)))
       ..initialize().then((_) {
         // Ensure the first frame is shown after the video is initialized, even before the play button has been pressed.
         setState(() {});

@@ -16,7 +16,7 @@ class _SaveVideoPlayerState extends State<SaveVideoPlayer> {
   Widget build(BuildContext context) {
     return Scaffold(
       body: Center(
-        child: Text(Service.subName.toString()),
+        child: Text(Service.savePath.toString()),
       ),
       floatingActionButton: Row(
         mainAxisAlignment: MainAxisAlignment.spaceAround,
@@ -27,9 +27,6 @@ class _SaveVideoPlayerState extends State<SaveVideoPlayer> {
                   'https://ftp1.optimedia.uz/123.mp4';
               Service.saveVideo2(url);
               print(Service.dir);
-
-              String smth = url.split('/').last;
-              Service.subName = "${Service.dir}/$smth";
               setState(() {});
             },
             child: const Icon(Icons.add),
