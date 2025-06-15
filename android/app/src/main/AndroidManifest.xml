@@ -1,5 +1,4 @@
-<manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.example.for_video">
+<manifest xmlns:android="http://schemas.android.com/apk/res/android">
    <application
         android:label="for_video"
         android:name="${applicationName}"

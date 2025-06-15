@@ -13,7 +13,7 @@ class Service {
 
   static saveVideo2(String url) async {
     var appDocDir = await getApplicationDocumentsDirectory();
-    savePath = appDocDir.path + "/temp.mp4";
+    savePath = "${appDocDir.path}/temp.mp4";
     saveToHive(savePath);
     String fileUrl = url;
     await Dio().download(fileUrl, savePath, onReceiveProgress: (count, total) {

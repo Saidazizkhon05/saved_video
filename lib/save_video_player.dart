@@ -26,7 +26,7 @@ class _SaveVideoPlayerState extends State<SaveVideoPlayer> {
   Widget build(BuildContext context) {
     return Scaffold(
       body: Center(
-        child: Text(Service.percentage + "%"),
+        child: Text("${Service.percentage}%"),
       ),
       floatingActionButton: Row(
         mainAxisAlignment: MainAxisAlignment.spaceAround,
